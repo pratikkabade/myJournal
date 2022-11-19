@@ -1,6 +1,6 @@
 {
-  "name": "calendar",
-  "homepage": "https://pratikkabade.github.io/calendarLink",
+  "name": "myjournal",
+  "homepage": "https://pratikkabade.github.io/myJournal",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
