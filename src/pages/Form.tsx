@@ -3,6 +3,8 @@ import { Diff, todayDate } from "../config/Date"
 import { changeEmoji, changeIT } from "../utils/Functions"
 
 export const Form = () => {
+
+
     // States
     const [goal, setGoal] = useState('')
     const [date1, setDate1] = useState(todayDate)
