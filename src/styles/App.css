@@ -1,0 +1,146 @@
+@media screen and (max-width: 968px) {
+    .contactForm {
+        max-width: 300px !important;
+        padding: 0px 20px 20px 20px;
+    }
+}
+
+.contactForm textarea {
+    padding: 10px 15px 15px 15px;
+}
+
+/* css for checkbox in form */
+.contactForm input[type="checkbox"] {
+    height: 18px;
+    width: 18px;
+    margin: 22px 10px 0 5%;
+    visibility: hidden;
+}
+
+.contactForm label {
+    font-size: calc(1rem + 0.8vw);
+    width: 100%;
+}
+
+.noSelect i {
+    padding: 5px;
+    font-size: calc(1rem + 0.4vw);
+    border-radius: 10px;
+    filter: contrast(0.5);
+    filter: brightness(0.5);
+    transition: 0.1s;
+    margin: 0 10px 0 10px;
+}
+
+.contactForm label:hover {
+    cursor: pointer;
+}
+
+.contactForm label:hover i {
+    filter: contrast(0.9);
+    filter: brightness(0.9);
+    transition: 0.1s;
+}
+
+/* onclick css */
+.contactForm input[type="checkbox"]:checked~i {
+    filter: contrast(1);
+    filter: brightness(1.01);
+}
+
+.contactForm kbd {
+    background-color: white;
+    color: rgb(184, 184, 184);
+}
+
+.contactForm input[type="checkbox"]:checked~kbd {
+    font-weight: 800;
+    color: black;
+}
+
+.mm i {
+    color: var(--white);
+    margin-top: 10px;
+}
+
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
+
+.contactForm h1 {
+    font-size: calc(1.7rem + 1.5vw);
+}
+
+h3 {
+    font-size: calc(1rem + 1.2vw);
+    margin-bottom: 0px;
+}
+
+.btn-accent h3 {
+    font-size: calc(1rem + 1.2vw);
+    font-weight: 500;
+    color: #000;
+}
+
+.ipBox input {
+    height: 18px;
+    width: 18px;
+}
+
+
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* crap */
+i {
+    margin: 0 0 0 10px;
+}
+
+#customNav {
+    background-color: rgba(0, 0, 0, 0) !important;
+    backdrop-filter: blur(0px) !important;
+    box-shadow: none !important;
+}
+
+label .red {
+    background-color: rgb(255, 208, 208);
+    color: rgb(231, 4, 4);
+}
+
+.green {
+    background-color: rgb(208, 255, 208);
+    color: green;
+}
+
+.orange {
+    background-color: rgb(255, 235, 198);
+    color: rgb(243, 158, 0);
+}
+
+.blue {
+    background-color: rgb(208, 208, 255);
+    color: rgb(0, 0, 141);
+}
+
+.skyblue {
+    background-color: rgb(208, 255, 255);
+    color: rgb(0, 180, 180);
+}
+
+.yellow {
+    background-color: rgb(255, 255, 208);
+    color: rgb(155, 155, 0);
+}
