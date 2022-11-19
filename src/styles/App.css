@@ -72,33 +72,34 @@
 
 .emoji i {
     filter: brightness(1);
-    font-size: 40px;
+    font-size: 35px;
     cursor: pointer;
     border-radius: 50%;
-    border: 3px solid var(--black);
+    border: 3px solid rgb(155, 155, 155);
     padding: 0px;
+    color: rgb(155, 155, 155);
 }
 
 .a {
-    color: rgb(255, 72, 0);
+    color: rgb(255, 72, 0) !important;
 }
 
 .b {
-    color: rgb(224, 119, 0);
+    color: rgb(224, 119, 0) !important;
 }
 
 .c {
-    color: rgb(0, 216, 224);
+    color: rgb(0, 216, 224) !important;
 }
 
 .d {
-    color: rgb(0, 224, 138);
+    color: rgb(0, 224, 138) !important;
 }
 
 .e {
-    background-color: rgb(155, 155, 155);
-    color: rgb(245, 241, 0);
-    padding: 0px;
+    background-color: rgb(155, 155, 155) !important;
+    color: rgb(245, 241, 0) !important;
+    padding: 0px !important;
 }
 
 /*  */

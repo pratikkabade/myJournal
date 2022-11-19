@@ -7,6 +7,11 @@ export const Form = () => {
 
     // States
     const [goal, setGoal] = useState('')
+    const [reason, setReason] = useState('')
+    const [ul, setUl] = useState('')
+    const [problem, setProblem] = useState('')
+    const [step, setStep] = useState('')
+    const [grt, setGrt] = useState('')
     const [date1, setDate1] = useState(todayDate)
     const [details, setDetails] = useState('')
     const [score, setScore] = useState(0)
@@ -49,14 +54,23 @@ export const Form = () => {
         var checkin = 5
         addDetails("Check-in: " + checkin + "%0A")
     }
-    function event7() {
-        addDetails("Todays Goal: " + goal + "%0A")
+    function event7a() {
+        addDetails("Reasons: " + reason)
     }
-    function event8() {
-        addDetails("Todays Goal: " + goal + "%0A")
+    function event7b() {
+        addDetails("Underlyings: " + ul)
     }
-    function event9() {
-        addDetails("Todays Goal: " + goal + "%0A")
+    function event8a() {
+        addDetails("%0A" + "Problems: " + problem)
+    }
+    function event8b() {
+        addDetails("Steps: " + step)
+    }
+    function event9a() {
+        addDetails("%0A" + "Todays Goal: " + goal)
+    }
+    function event9b() {
+        addDetails("Grateful for: " + grt + "%0A")
     }
 
 
@@ -124,6 +138,75 @@ export const Form = () => {
                             className="fa-solid fa-face-smile"></i>
                     </div>
 
+
+                    <div className="mt-5"></div>
+                    <div className="btn-accent white d-flex justify-content-center">
+                        <h3>Reasons</h3>
+                    </div>
+                    <div className="mt-3 d-flex mm">
+                        <input type={'text'} onChange={(e) => {
+                            setReason(e.target.value)
+                        }} placeholder='Reasons' />
+                        <i onClick={() => {
+                            event7a()
+                            changeIT('1')
+                        }}
+                            id='1'
+                            className="fa-solid fa-refresh"></i>
+                    </div>
+
+
+                    <div className="mt-5"></div>
+                    <div className="btn-accent white d-flex justify-content-center">
+                        <h3>Underlyings</h3>
+                    </div>
+                    <div className="mt-3 d-flex mm">
+                        <input type={'text'} onChange={(e) => {
+                            setUl(e.target.value)
+                        }} placeholder='Underlyings' />
+                        <i onClick={() => {
+                            event7b()
+                            changeIT('2')
+                        }}
+                            id='2'
+                            className="fa-solid fa-refresh"></i>
+                    </div>
+
+
+                    <div className="mt-5"></div>
+                    <div className="btn-accent white d-flex justify-content-center">
+                        <h3>Problems</h3>
+                    </div>
+                    <div className="mt-3 d-flex mm">
+                        <input type={'text'} onChange={(e) => {
+                            setProblem(e.target.value)
+                        }} placeholder='Todays Problems' />
+                        <i onClick={() => {
+                            event8a()
+                            changeIT('3')
+                        }}
+                            id='3'
+                            className="fa-solid fa-refresh"></i>
+                    </div>
+
+
+                    <div className="mt-5"></div>
+                    <div className="btn-accent white d-flex justify-content-center">
+                        <h3>Steps</h3>
+                    </div>
+                    <div className="mt-3 d-flex mm">
+                        <input type={'text'} onChange={(e) => {
+                            setStep(e.target.value)
+                        }} placeholder='Steps' />
+                        <i onClick={() => {
+                            event8b()
+                            changeIT('4')
+                        }}
+                            id='4'
+                            className="fa-solid fa-refresh"></i>
+                    </div>
+
+
                     <div className="mt-5"></div>
                     <div className="btn-accent white d-flex justify-content-center">
                         <h3>Goals</h3>
@@ -133,10 +216,27 @@ export const Form = () => {
                             setGoal(e.target.value)
                         }} placeholder='Todays Goals' />
                         <i onClick={() => {
-                            event9()
-                            changeIT('4')
+                            event9a()
+                            changeIT('5')
                         }}
-                            id='4'
+                            id='5'
+                            className="fa-solid fa-refresh"></i>
+                    </div>
+
+
+                    <div className="mt-5"></div>
+                    <div className="btn-accent white d-flex justify-content-center">
+                        <h3>Gratitude</h3>
+                    </div>
+                    <div className="mt-3 d-flex mm">
+                        <input type={'text'} onChange={(e) => {
+                            setGrt(e.target.value)
+                        }} placeholder='Grateful for' />
+                        <i onClick={() => {
+                            event9b()
+                            changeIT('6')
+                        }}
+                            id='6'
                             className="fa-solid fa-refresh"></i>
                     </div>
 
