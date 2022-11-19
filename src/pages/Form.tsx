@@ -1,9 +1,8 @@
 import { useState } from "react"
 import { Diff, todayDate } from "../config/Date"
+import { changeEmoji, changeIT } from "../utils/Functions"
 
 export const Form = () => {
-
-
     // States
     const [goal, setGoal] = useState('')
     const [date1, setDate1] = useState(todayDate)
@@ -28,13 +27,37 @@ export const Form = () => {
     const event5 = (e: any) => {
         setDetails(e.target.value.replace(/ /g, '+') + "%0A" + "%0A")
     }
-    function event6() {
+    function event6a() {
+        var checkin = 1
+        addDetails("Check-in: " + checkin + "%0A")
+    }
+    function event6b() {
+        var checkin = 2
+        addDetails("Check-in: " + checkin + "%0A")
+    }
+    function event6c() {
+        var checkin = 3
+        addDetails("Check-in: " + checkin + "%0A")
+    }
+    function event6d() {
+        var checkin = 4
+        addDetails("Check-in: " + checkin + "%0A")
+    }
+    function event6e() {
+        var checkin = 5
+        addDetails("Check-in: " + checkin + "%0A")
+    }
+    function event7() {
+        addDetails("Todays Goal: " + goal + "%0A")
+    }
+    function event8() {
+        addDetails("Todays Goal: " + goal + "%0A")
+    }
+    function event9() {
         addDetails("Todays Goal: " + goal + "%0A")
     }
 
-    function logg() {
-        console.log(details)
-    }
+
     // FUNCTION TO ADD DETAILS
     async function addDetails(newDetail: any) {
         await setDetails(details + newDetail + "%0A")
@@ -46,19 +69,11 @@ export const Form = () => {
     }
 
 
-
     // Output
     return (
         <div>
             <div className="contactForm">
                 <h1>Journal <i className="fa-regular fa-calendar"></i> </h1>
-
-
-                <a target={"_blank"} rel="noreferrer" className="btn-accent mt-3 blk green" onClick={logg}>
-                    log
-                    <i className="fa-solid fa-arrow-up-right-from-square">
-                    </i>
-                </a>
 
                 <div className="noSelect">
                     <div className="mt-5"></div>
@@ -71,6 +86,42 @@ export const Form = () => {
                     </div>
 
 
+                    <div className="mt-5 btn-accent white d-flex justify-content-center">
+                        <h3>Check-in</h3>
+                    </div>
+                    <div className="mt-3 emoji">
+                        <i onClick={() => {
+                            event6a()
+                            changeEmoji('a')
+                        }}
+                            id='a'
+                            className="fa-solid fa-face-smile"></i>
+                        <i onClick={() => {
+                            event6b()
+                            changeEmoji('b')
+                        }}
+                            id='b'
+                            className="fa-solid fa-face-smile"></i>
+                        <i onClick={() => {
+                            event6c()
+                            changeEmoji('c')
+                        }}
+                            id='c'
+                            className="fa-solid fa-face-smile"></i>
+                        <i onClick={() => {
+                            event6d()
+                            changeEmoji('d')
+                        }}
+                            id='d'
+                            className="fa-solid fa-face-smile"></i>
+                        <i onClick={() => {
+                            event6e()
+                            changeEmoji('e')
+                        }}
+                            id='e'
+                            className="fa-solid fa-face-smile"></i>
+                    </div>
+
                     <div className="mt-5"></div>
                     <div className="btn-accent white d-flex justify-content-center">
                         <h3>Goals</h3>
@@ -80,9 +131,10 @@ export const Form = () => {
                             setGoal(e.target.value)
                         }} placeholder='Todays Goals' />
                         <i onClick={() => {
-                            event6()
+                            event9()
+                            changeIT('4')
                         }}
-                            id='1'
+                            id='4'
                             className="fa-solid fa-refresh"></i>
                     </div>
 
@@ -254,11 +306,6 @@ export const Form = () => {
                 <div className="d-flex justify-content-center mt-3">
                     <a href={Word} target={"_blank"} rel="noreferrer" className="btn-accent mt-3 blk green">
                         Save
-                        <i className="fa-solid fa-arrow-up-right-from-square">
-                        </i>
-                    </a>
-                    <a target={"_blank"} rel="noreferrer" className="btn-accent mt-3 blk green" onClick={logg}>
-                        log
                         <i className="fa-solid fa-arrow-up-right-from-square">
                         </i>
                     </a>
