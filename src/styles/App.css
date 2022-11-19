@@ -63,6 +63,43 @@
     margin-top: 10px;
 }
 
+.emoji {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.emoji i {
+    filter: brightness(1);
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid var(--black);
+    padding: 0px;
+}
+
+.a {
+    color: rgb(255, 72, 0);
+}
+
+.b {
+    color: rgb(224, 119, 0);
+}
+
+.c {
+    color: rgb(0, 216, 224);
+}
+
+.d {
+    color: rgb(0, 224, 138);
+}
+
+.e {
+    background-color: rgb(155, 155, 155);
+    color: rgb(245, 241, 0);
+    padding: 0px;
+}
 
 /*  */
 /*  */
