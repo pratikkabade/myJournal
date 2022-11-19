@@ -1,16 +1,25 @@
 import './App.css';
 import { Header } from './components/Header';
-import { Home } from './pages/Home';
+import { auth } from './config/Firebase';
 import { Form } from './pages/Form';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Home } from './pages/Home';
 
 function App() {
+
+  const [user] = useAuthState(auth);
+
   return (
     <>
       <Header />
-      <Home />
-      <span className='anchor pushDown' id='form'></span>
+      {/* {user?.email == 'thisispratikkabade@gmail.com' ?
+        <div>
+          <Form />
+        </div>
+        :
+        <Home />
+      } */}
       <Form />
-      <span className='anchor'></span>
     </>
   );
 }
