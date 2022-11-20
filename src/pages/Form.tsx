@@ -32,7 +32,7 @@ export const Form = () => {
         setDate1(e.target.value.replace(/-/g, ''))
     }
     const event5 = (e: any) => {
-        setDetails(e.target.value.replace(/ /g, '+') + "%0A" + "%0A")
+        setDetails(e.target.value.replace(/ /g, '+') + "%0A%0A")
     }
     function event6a() {
         var checkin = 1
@@ -61,13 +61,13 @@ export const Form = () => {
         addDetails("Underlyings: " + ul)
     }
     function event8a() {
-        addDetails("%0A" + "Problems: " + problem)
+        addDetails("%0AProblems: " + problem)
     }
     function event8b() {
         addDetails("Steps: " + step)
     }
     function event9a() {
-        addDetails("%0A" + "Todays Goal: " + goal)
+        addDetails("%0ATodays Goal: " + goal)
     }
     function event9b() {
         addDetails("Grateful for: " + grt + "%0A")
@@ -92,9 +92,10 @@ export const Form = () => {
                 <h1>Journal <i className="fa-regular fa-calendar"></i> </h1>
 
                 <div className="noSelect">
-                    <div className="mt-5"></div>
-                    <div className="btn-accent white d-flex justify-content-center">
-                        <h3>Date</h3>
+                    <div className="mt-5">
+                        <div className="skyblue d-flex justify-content-center align-items-center">
+                            <h3>Date</h3><i className="fa-solid fa-calendar-days"></i>
+                        </div>
                     </div>
                     <div className="mt-3">
                         <input type="date" onChange={event2} />
@@ -102,8 +103,10 @@ export const Form = () => {
                     </div>
 
 
-                    <div className="mt-5 btn-accent white d-flex justify-content-center">
-                        <h3>Check-in</h3>
+                    <div className="mt-5">
+                        <div className="yellow d-flex justify-content-center align-items-center">
+                            <h3>Check-in</h3><i className="fa-solid fa-square-check"></i>
+                        </div>
                     </div>
                     <div className="mt-3 emoji">
                         <i onClick={() => {
@@ -111,13 +114,13 @@ export const Form = () => {
                             changeEmoji('a')
                         }}
                             id='a'
-                            className="fa-solid fa-face-smile"></i>
+                            className="fa-solid fa-face-angry"></i>
                         <i onClick={() => {
                             event6b()
                             changeEmoji('b')
                         }}
                             id='b'
-                            className="fa-solid fa-face-smile"></i>
+                            className="fa-solid fa-face-frown"></i>
                         <i onClick={() => {
                             event6c()
                             changeEmoji('c')
@@ -129,19 +132,20 @@ export const Form = () => {
                             changeEmoji('d')
                         }}
                             id='d'
-                            className="fa-solid fa-face-smile"></i>
+                            className="fa-solid fa-face-smile-beam"></i>
                         <i onClick={() => {
                             event6e()
                             changeEmoji('e')
                         }}
                             id='e'
-                            className="fa-solid fa-face-smile"></i>
+                            className="fa-solid fa-face-laugh-beam"></i>
                     </div>
 
 
-                    <div className="mt-5"></div>
-                    <div className="btn-accent white d-flex justify-content-center">
-                        <h3>Reasons</h3>
+                    <div className="mt-5">
+                        <div className="red d-flex justify-content-center align-items-center">
+                            <h3>Reasons</h3><i className="fa-solid fa-circle-question"></i>
+                        </div>
                     </div>
                     <div className="mt-3 d-flex mm">
                         <input type={'text'} onChange={(e) => {
@@ -156,9 +160,10 @@ export const Form = () => {
                     </div>
 
 
-                    <div className="mt-5"></div>
-                    <div className="btn-accent white d-flex justify-content-center">
-                        <h3>Underlyings</h3>
+                    <div className="mt-5">
+                        <div className="red d-flex justify-content-center align-items-center">
+                            <h3>Underlyings</h3><i className="fa-solid fa-door-closed"></i>
+                        </div>
                     </div>
                     <div className="mt-3 d-flex mm">
                         <input type={'text'} onChange={(e) => {
@@ -173,9 +178,10 @@ export const Form = () => {
                     </div>
 
 
-                    <div className="mt-5"></div>
-                    <div className="btn-accent white d-flex justify-content-center">
-                        <h3>Problems</h3>
+                    <div className="mt-5">
+                        <div className="blue d-flex justify-content-center align-items-center">
+                            <h3>Problems</h3><i className="fa-solid fa-circle-exclamation"></i>
+                        </div>
                     </div>
                     <div className="mt-3 d-flex mm">
                         <input type={'text'} onChange={(e) => {
@@ -190,9 +196,10 @@ export const Form = () => {
                     </div>
 
 
-                    <div className="mt-5"></div>
-                    <div className="btn-accent white d-flex justify-content-center">
-                        <h3>Steps</h3>
+                    <div className="mt-5">
+                        <div className="blue d-flex justify-content-center align-items-center">
+                            <h3>Steps</h3><i className="fa-solid fa-stairs"></i>
+                        </div>
                     </div>
                     <div className="mt-3 d-flex mm">
                         <input type={'text'} onChange={(e) => {
@@ -207,9 +214,10 @@ export const Form = () => {
                     </div>
 
 
-                    <div className="mt-5"></div>
-                    <div className="btn-accent white d-flex justify-content-center">
-                        <h3>Goals</h3>
+                    <div className="mt-5">
+                        <div className="skyblue d-flex justify-content-center align-items-center">
+                            <h3>Goals</h3><i className="fa-solid fa-bullseye"></i>
+                        </div>
                     </div>
                     <div className="mt-3 d-flex mm">
                         <input type={'text'} onChange={(e) => {
@@ -224,9 +232,10 @@ export const Form = () => {
                     </div>
 
 
-                    <div className="mt-5"></div>
-                    <div className="btn-accent white d-flex justify-content-center">
-                        <h3>Gratitude</h3>
+                    <div className="mt-5">
+                        <div className="orange d-flex justify-content-center align-items-center">
+                            <h3>Gratitude</h3><i className="fa-brands fa-gratipay"></i>
+                        </div>
                     </div>
                     <div className="mt-3 d-flex mm">
                         <input type={'text'} onChange={(e) => {
@@ -242,8 +251,8 @@ export const Form = () => {
 
 
                     <div className="mt-5">
-                        <div className="btn-accent purple d-flex justify-content-center">
-                            <h3>Yesterday</h3>
+                        <div className="purple d-flex justify-content-center align-items-center">
+                            <h3>Yesterday</h3><i className="fa-solid fa-backward"></i>
                         </div>
                         <div className="d-flex mt-3">
                             <label><input type='checkbox' onClick={() => {
@@ -272,8 +281,8 @@ export const Form = () => {
                     </div>
 
                     <div className="mt-5">
-                        <div className="btn-accent green d-flex justify-content-center">
-                            <h3>Additions</h3>
+                        <div className="green d-flex justify-content-center align-items-center">
+                            <h3>Additions</h3><i className="fa-solid fa-square-plus"></i>
                         </div>
                         <div className="d-flex mt-3">
                             <label><input type='checkbox' onClick={() => {
@@ -283,7 +292,7 @@ export const Form = () => {
                             }} />
                                 <i className="fa-solid fa-person red"></i> <kbd>Early Wake</kbd></label>
                         </div>
-                        <div className="d-flex mt-3">
+                        <div>
                             <label><input type='checkbox' onClick={() => {
                                 var val = 1
                                 addDetails("(+" + val + ") Talks")
@@ -334,8 +343,8 @@ export const Form = () => {
                     </div>
 
                     <div className="mt-5">
-                        <div className="btn-accent red d-flex justify-content-center">
-                            <h3>Deductions</h3>
+                        <div className="red d-flex justify-content-center align-items-center ">
+                            <h3>Deductions</h3><i className="fa-solid fa-square-minus"></i>
                         </div>
                         <div className="d-flex mt-3">
                             <label><input type='checkbox' onClick={() => {

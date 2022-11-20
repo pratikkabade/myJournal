@@ -75,32 +75,35 @@
     font-size: 35px;
     cursor: pointer;
     border-radius: 50%;
-    border: 3px solid rgb(155, 155, 155);
     padding: 0px;
-    color: rgb(155, 155, 155);
+    color: rgb(219, 219, 219);
 }
 
 .a {
-    color: rgb(255, 72, 0) !important;
+    background-color: rgb(0, 0, 0) !important;
+    color: rgb(255, 30, 0) !important;
 }
 
 .b {
-    color: rgb(224, 119, 0) !important;
-}
-
-.c {
+    background-color: rgb(0, 0, 0) !important;
     color: rgb(0, 216, 224) !important;
 }
 
+.c {
+    background-color: rgb(0, 0, 0) !important;
+    color: rgb(245, 241, 0) !important;
+}
+
 .d {
-    color: rgb(0, 224, 138) !important;
+    background-color: rgb(0, 0, 0) !important;
+    color: rgb(0, 255, 34) !important;
 }
 
 .e {
-    background-color: rgb(155, 155, 155) !important;
-    color: rgb(245, 241, 0) !important;
-    padding: 0px !important;
+    background-color: rgb(0, 0, 0) !important;
+    color: rgb(41, 248, 0) !important;
 }
+
 
 /*  */
 /*  */
@@ -133,6 +136,16 @@ h3 {
 }
 
 
+.mt-5 .align-items-center {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.mt-5 .align-items-center i {
+    filter: brightness(1);
+    font-size: calc(1rem + 1vw);
+    margin-left: 20px !important;
+}
 
 /*  */
 /*  */
@@ -153,7 +166,7 @@ i {
     box-shadow: none !important;
 }
 
-label .red {
+.red {
     background-color: rgb(255, 208, 208);
     color: rgb(231, 4, 4);
 }
@@ -181,4 +194,9 @@ label .red {
 .yellow {
     background-color: rgb(255, 255, 208);
     color: rgb(155, 155, 0);
+}
+
+.purple {
+    background-color: rgb(255, 208, 255);
+    color: rgb(141, 0, 141);
 }
