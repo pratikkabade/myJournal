@@ -257,6 +257,14 @@ export const Form = () => {
                         <div className="d-flex mt-3">
                             <label><input type='checkbox' onClick={() => {
                                 var val = +1
+                                addDetails("(" + val + ") Recorded")
+                                calculateScore(val)
+                            }} />
+                                <i className="fa-solid fa-record-vinyl red"></i> <kbd>Recorded</kbd></label>
+                        </div>
+                        <div>
+                            <label><input type='checkbox' onClick={() => {
+                                var val = +2
                                 addDetails("(+" + val + ") Tasks")
                                 calculateScore(val)
                             }} />
@@ -264,19 +272,11 @@ export const Form = () => {
                         </div>
                         <div>
                             <label><input type='checkbox' onClick={() => {
-                                var val = +1
+                                var val = +3
                                 addDetails("(+" + val + ") Early Sleep")
                                 calculateScore(val)
                             }} />
                                 <i className="fa-solid fa-bed blue"></i> <kbd>Early Sleep</kbd></label>
-                        </div>
-                        <div>
-                            <label><input type='checkbox' onClick={() => {
-                                var val = -1
-                                addDetails("(-" + val + ") Hrs Wasted")
-                                calculateScore(val)
-                            }} />
-                                <i className="fa-solid fa-hourglass-end red"></i> <kbd>Hrs Wasted</kbd></label>
                         </div>
                     </div>
 
@@ -295,18 +295,18 @@ export const Form = () => {
                         <div>
                             <label><input type='checkbox' onClick={() => {
                                 var val = 1
-                                addDetails("(+" + val + ") Talks")
-                                calculateScore(val)
-                            }} />
-                                <i className="fa-solid fa-person red"></i> <kbd>Talks</kbd></label>
-                        </div>
-                        <div>
-                            <label><input type='checkbox' onClick={() => {
-                                var val = 1
                                 addDetails("(+" + val + ") Meditation")
                                 calculateScore(val)
                             }} />
                                 <i className="fa-solid fa-circle orange"></i> <kbd>Meditation</kbd></label>
+                        </div>
+                        <div>
+                            <label><input type='checkbox' onClick={() => {
+                                var val = 1
+                                addDetails("(+" + val + ") Talks")
+                                calculateScore(val)
+                            }} />
+                                <i className="fa-solid fa-person red"></i> <kbd>Talks</kbd></label>
                         </div>
                         <div>
                             <label><input type='checkbox' onClick={() => {
