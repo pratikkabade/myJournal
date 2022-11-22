@@ -3,9 +3,9 @@ import { useEffect, useState } from "react"
 import { Diff, todayDate } from "../config/Date"
 import { journalCollectionRef } from "../config/Firebase"
 import { changeEmoji, changeIT } from "../utils/Functions"
-import { _ReadPost } from "../utils/read/_ReadPost"
+import { _ReadPost } from "./read/_ReadPost"
 
-export const Form = () => {
+export const TForm = () => {
 
 
     // States
@@ -18,7 +18,6 @@ export const Form = () => {
     const [date1, setDate1] = useState(todayDate)
     const [details, setDetails] = useState('')
     const [score, setScore] = useState(0)
-    const [posts, setPosts] = useState([])
 
     // Functions
     const theDiff = Diff(date1)
@@ -88,8 +87,9 @@ export const Form = () => {
         setScore(score + val)
     }
 
+    // READ ALL
+    const [posts, setPosts] = useState([])
 
-    //READ ALL
     const readPost = async () => {
         const data = await getDocs(journalCollectionRef)
         setPosts(data.docs.map(
@@ -102,6 +102,11 @@ export const Form = () => {
     useEffect(() => {
         readPost()
     })
+
+    //log
+    function log() {
+        console.log(details)
+    }
 
 
     // Output
@@ -122,152 +127,6 @@ export const Form = () => {
                     </div>
 
 
-                    <div className="mt-5">
-                        <div className="yellow d-flex justify-content-center align-items-center">
-                            <h3>Check-in</h3><i className="fa-solid fa-square-check"></i>
-                        </div>
-                    </div>
-                    <div className="mt-3 emoji">
-                        <i onClick={() => {
-                            event6a()
-                            changeEmoji('a')
-                        }}
-                            id='a'
-                            className="fa-solid fa-face-angry"></i>
-                        <i onClick={() => {
-                            event6b()
-                            changeEmoji('b')
-                        }}
-                            id='b'
-                            className="fa-solid fa-face-frown"></i>
-                        <i onClick={() => {
-                            event6c()
-                            changeEmoji('c')
-                        }}
-                            id='c'
-                            className="fa-solid fa-face-smile"></i>
-                        <i onClick={() => {
-                            event6d()
-                            changeEmoji('d')
-                        }}
-                            id='d'
-                            className="fa-solid fa-face-smile-beam"></i>
-                        <i onClick={() => {
-                            event6e()
-                            changeEmoji('e')
-                        }}
-                            id='e'
-                            className="fa-solid fa-face-laugh-beam"></i>
-                    </div>
-
-
-                    <div className="mt-5">
-                        <div className="red d-flex justify-content-center align-items-center">
-                            <h3>Reasons</h3><i className="fa-solid fa-circle-question"></i>
-                        </div>
-                    </div>
-                    <div className="mt-3 d-flex mm">
-                        <input type={'text'} onChange={(e) => {
-                            setReason(e.target.value)
-                        }} placeholder='Reasons' />
-                        <i onClick={() => {
-                            event7a()
-                            changeIT('1')
-                        }}
-                            id='1'
-                            className="fa-solid fa-refresh"></i>
-                    </div>
-
-
-                    <div className="mt-5">
-                        <div className="red d-flex justify-content-center align-items-center">
-                            <h3>Underlyings</h3><i className="fa-solid fa-door-closed"></i>
-                        </div>
-                    </div>
-                    <div className="mt-3 d-flex mm">
-                        <input type={'text'} onChange={(e) => {
-                            setUl(e.target.value)
-                        }} placeholder='Underlyings' />
-                        <i onClick={() => {
-                            event7b()
-                            changeIT('2')
-                        }}
-                            id='2'
-                            className="fa-solid fa-refresh"></i>
-                    </div>
-
-
-                    <div className="mt-5">
-                        <div className="blue d-flex justify-content-center align-items-center">
-                            <h3>Problems</h3><i className="fa-solid fa-circle-exclamation"></i>
-                        </div>
-                    </div>
-                    <div className="mt-3 d-flex mm">
-                        <input type={'text'} onChange={(e) => {
-                            setProblem(e.target.value)
-                        }} placeholder='Todays Problems' />
-                        <i onClick={() => {
-                            event8a()
-                            changeIT('3')
-                        }}
-                            id='3'
-                            className="fa-solid fa-refresh"></i>
-                    </div>
-
-
-                    <div className="mt-5">
-                        <div className="blue d-flex justify-content-center align-items-center">
-                            <h3>Steps</h3><i className="fa-solid fa-stairs"></i>
-                        </div>
-                    </div>
-                    <div className="mt-3 d-flex mm">
-                        <input type={'text'} onChange={(e) => {
-                            setStep(e.target.value)
-                        }} placeholder='Steps' />
-                        <i onClick={() => {
-                            event8b()
-                            changeIT('4')
-                        }}
-                            id='4'
-                            className="fa-solid fa-refresh"></i>
-                    </div>
-
-
-                    <div className="mt-5">
-                        <div className="skyblue d-flex justify-content-center align-items-center">
-                            <h3>Goals</h3><i className="fa-solid fa-bullseye"></i>
-                        </div>
-                    </div>
-                    <div className="mt-3 d-flex mm">
-                        <input type={'text'} onChange={(e) => {
-                            setGoal(e.target.value)
-                        }} placeholder='Todays Goals' />
-                        <i onClick={() => {
-                            event9a()
-                            changeIT('5')
-                        }}
-                            id='5'
-                            className="fa-solid fa-refresh"></i>
-                    </div>
-
-
-                    <div className="mt-5">
-                        <div className="orange d-flex justify-content-center align-items-center">
-                            <h3>Gratitude</h3><i className="fa-brands fa-gratipay"></i>
-                        </div>
-                    </div>
-                    <div className="mt-3 d-flex mm">
-                        <input type={'text'} onChange={(e) => {
-                            setGrt(e.target.value)
-                        }} placeholder='Grateful for' />
-                        <i onClick={() => {
-                            event9b()
-                            changeIT('6')
-                        }}
-                            id='6'
-                            className="fa-solid fa-refresh"></i>
-                    </div>
-
 
                     <div className="mt-5">
                         <div className="purple d-flex justify-content-center align-items-center">
@@ -278,7 +137,7 @@ export const Form = () => {
                             <div key={thisPost.id}>
                                 <a onClick={() => {
                                     console.log(thisPost.name);
-                                    addDetails("(" + thisPost.val + ") " + thisPost.name)
+                                    addDetails("(" + thisPost.val + ") Recorded")
 
                                     var v = parseInt(thisPost.val) / 2
                                     calculateScore(v)
@@ -298,7 +157,7 @@ export const Form = () => {
                             <div key={thisPost.id}>
                                 <a onClick={() => {
                                     console.log(thisPost.name);
-                                    addDetails("(" + thisPost.val + ") " + thisPost.name)
+                                    addDetails("(" + thisPost.val + ") Recorded")
 
                                     var v = parseInt(thisPost.val) / 2
                                     calculateScore(v)
@@ -318,7 +177,7 @@ export const Form = () => {
                             <div key={thisPost.id}>
                                 <a onClick={() => {
                                     console.log(thisPost.name);
-                                    addDetails("(" + thisPost.val + ") " + thisPost.name)
+                                    addDetails("(" + thisPost.val + ")" + thisPost.name)
 
                                     var v = parseInt(thisPost.val) / 2
                                     calculateScore(v)
@@ -328,6 +187,7 @@ export const Form = () => {
                             </div>
                         ))}
                     </div>
+
                 </div>
 
 
@@ -352,6 +212,9 @@ export const Form = () => {
                         Save
                         <i className="fa-solid fa-arrow-up-right-from-square">
                         </i>
+                    </a>
+                    <a onClick={log} target={"_blank"} rel="noreferrer" className="btn-accent mt-3 blk green">
+                        log
                     </a>
                 </div>
 

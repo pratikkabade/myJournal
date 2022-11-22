@@ -8,5 +8,8 @@ Built with `TypeScript` and with basics of `React`
 
 ### Start Date is defined in the `./scr/config/Date.tsx` file
 
-### Screenshots
+### Note
 
+Firebase gives dual outputs on `onclick`
+
+So wont be rolling out until the issue is fixed properly 

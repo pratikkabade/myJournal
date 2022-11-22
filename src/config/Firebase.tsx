@@ -3,21 +3,30 @@ import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { collection, getFirestore } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//     apiKey: "AIzaSyA6_nk4tlbsLaV1AzMTitJrR8XO4GmSomo",
+//     authDomain: "quickstart-projtut.firebaseapp.com",
+//     projectId: "quickstart-projtut",
+//     storageBucket: "quickstart-projtut.appspot.com",
+//     messagingSenderId: "473509015721",
+//     appId: "1:473509015721:web:0ce730b6e695bbd734b9b8",
+//     measurementId: "G-H9KMF8MX9L"
+// };
 const firebaseConfig = {
-    apiKey: "AIzaSyA6_nk4tlbsLaV1AzMTitJrR8XO4GmSomo",
-    authDomain: "quickstart-projtut.firebaseapp.com",
-    projectId: "quickstart-projtut",
-    storageBucket: "quickstart-projtut.appspot.com",
-    messagingSenderId: "473509015721",
-    appId: "1:473509015721:web:0ce730b6e695bbd734b9b8",
-    measurementId: "G-H9KMF8MX9L"
+    apiKey: "AIzaSyCoeVfDXv5c6O0auBApoNcd0wePgYb5rTE",
+    authDomain: "react-firebase-crud-de170.firebaseapp.com",
+    databaseURL: "https://react-firebase-crud-de170.firebaseio.com",
+    projectId: "react-firebase-crud-de170",
+    storageBucket: "react-firebase-crud-de170.appspot.com",
+    messagingSenderId: "778361328727",
+    appId: "1:778361328727:web:dd9a2dec582b638f15ff12"
 };
 
 // Initialize Firebase
@@ -29,3 +38,4 @@ export const provider = new GoogleAuthProvider();
 
 export const db = getFirestore(app)
 
+export const journalCollectionRef = collection(db, "journal")
