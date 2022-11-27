@@ -12,14 +12,15 @@ function App() {
   return (
     <>
       <Header />
-      {user?.email === 'thisispratikkabade@gmail.com' ?
+
+      {/* <Form /> */}
+      {/* {user?.email === 'thisispratikkabade@gmail.com' ?
         <div>
           <Form />
         </div>
         :
         <Home />
-      }
-      <Form />
+      } */}
     </>
   );
 }
