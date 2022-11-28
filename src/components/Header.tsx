@@ -1,6 +1,7 @@
 import { auth } from "../config/Firebase";
 import { SignOut } from "../security/SignOut"
 import { useAuthState } from 'react-firebase-hooks/auth'
+import { Link } from 'react-router-dom'
 
 export const Header = () => {
     const [user] = useAuthState(auth);
@@ -13,7 +14,17 @@ export const Header = () => {
                     </a>
                 </ul>
                 <div className='collapse navbar-collapse justify-content-end'>
-                    {user ? <SignOut /> : null}
+                    {user ? <SignOut />
+                        :
+                        <>
+                            <Link to='/myJournal/Form'>
+                                <button className='btn-accent green'>Form</button>
+                            </Link>
+                            <Link to='/myJournal/Calendar'>
+                                <button className='btn-accent blue'>Calendar</button>
+                            </Link>
+                        </>
+                    }
                 </div>
             </div>
         </nav>
