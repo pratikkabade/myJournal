@@ -52,13 +52,13 @@
 .controls .btn {
     font-size: 18px;
     line-height: 1;
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
     text-transform: none;
     text-align: center;
     color: #ffffff;
     border: none;
-    background-color: #000000;
+    background-color: var(--accent);
     padding: 13px 20px;
     margin: 0;
     cursor: pointer;
@@ -120,6 +120,18 @@
 
 .key {
     display: none;
+}
+
+.isLateCheckout {
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.isLateCheckout {
+    background: white;
+    color: #ff0000;
 }
 
 
