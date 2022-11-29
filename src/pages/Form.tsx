@@ -1,11 +1,8 @@
-import { getDocs } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { Diff, todayDate } from "../config/Date"
-import { journalCollectionRef } from "../config/Firebase"
 import { changeEmoji, changeIT } from "../utils/Functions"
 
 export const Form = () => {
-
 
     // States
     const [goal, setGoal] = useState('')
@@ -17,7 +14,11 @@ export const Form = () => {
     const [date1, setDate1] = useState(todayDate)
     const [details, setDetails] = useState('')
     const [score, setScore] = useState(0)
-    const [posts, setPosts] = useState([])
+    // sheet
+    const [yesV, setYesV] = useState([])
+    const [addV, setAddV] = useState([])
+    const [dedV, setDedV] = useState([])
+    const [loading, setLoading] = useState(true)
 
     // Functions
     const theDiff = Diff(date1)
@@ -87,19 +88,88 @@ export const Form = () => {
         setScore(score + val)
     }
 
+    // REMOVED FIREBASE FUNCTION
+    // // WATCH `Firebase` BRANCH FOR CHANGES
 
-    //READ ALL
-    const readPost = async () => {
-        const data = await getDocs(journalCollectionRef)
-        setPosts(data.docs.map(
-            (doc) => ({
-                ...doc.data(), id: doc.id
-            })
-        ));
+    // SHEET FUNCTIONS
+    const url = "https://script.google.com/macros/s/AKfycbzcUU_Qa6vthx_X-bBZcoALtOe5coqAc8bsOFFeFxCKH1oDGUGzQCVWL_NDKvo7W45iuw/exec";
+
+    const fetchData = async () => {
+        const response = await fetch(url);
+        const values = await response.json();
+
+        const yesValues = values.values.yesv;
+        const addValues = values.values.addv;
+        const dedValues = values.values.dedv;
+        // split val  by ,
+        const yVal = yesValues.map((item: any) => {
+            return {
+                item: item.split(',')
+            }
+        })
+        // return item vise allotment
+        const yVAL = yVal.map((item: any) => {
+            return {
+                val: item.item[0],
+                name: item.item[1],
+                logo: item.item[2]
+            }
+        })
+        // dont return empty values
+        const finalyVal = yVAL.filter((item: any) => {
+            return item.val !== ''
+        })
+        setYesV(finalyVal)
+
+
+        // split val  by ,
+        const aVal = addValues.map((item: any) => {
+            return {
+                item: item.split(',')
+            }
+        })
+        // return item vise allotment
+        const aVAL = aVal.map((item: any) => {
+            return {
+                val: item.item[0],
+                name: item.item[1],
+                logo: item.item[2]
+            }
+        })
+        // dont return empty values
+        const finalaVal = aVAL.filter((item: any) => {
+            return item.val !== ''
+        })
+        setAddV(finalaVal)
+
+
+        // split val  by ,
+        const dVal = dedValues.map((item: any) => {
+            return {
+                item: item.split(',')
+            }
+        })
+        // return item vise allotment
+        const dVAL = dVal.map((item: any) => {
+            return {
+                val: item.item[0],
+                name: item.item[1],
+                logo: item.item[2]
+            }
+        })
+        // dont return empty values
+        const finaldVal = dVAL.filter((item: any) => {
+            return item.val !== ''
+        })
+        setDedV(finaldVal)
+
+
+        setLoading(false)
     }
 
+    // USE EFFECT
     useEffect(() => {
-        readPost()
+        fetchData()
     })
 
 
@@ -126,36 +196,42 @@ export const Form = () => {
                             <h3>Check-in</h3><i className="fa-solid fa-square-check"></i>
                         </div>
                         <div className="mt-3 emoji">
-                            <i onClick={() => {
-                                event6a()
-                                changeEmoji('a')
-                            }}
-                                id='a'
-                                className="fa-solid fa-face-angry"></i>
-                            <i onClick={() => {
-                                event6b()
-                                changeEmoji('b')
-                            }}
-                                id='b'
-                                className="fa-solid fa-face-frown"></i>
-                            <i onClick={() => {
-                                event6c()
-                                changeEmoji('c')
-                            }}
-                                id='c'
-                                className="fa-solid fa-face-smile"></i>
-                            <i onClick={() => {
-                                event6d()
-                                changeEmoji('d')
-                            }}
-                                id='d'
-                                className="fa-solid fa-face-smile-beam"></i>
-                            <i onClick={() => {
-                                event6e()
-                                changeEmoji('e')
-                            }}
-                                id='e'
-                                className="fa-solid fa-face-laugh-beam"></i>
+                            <h1>
+                                <span onClick={() => {
+                                    event6a()
+                                    changeEmoji('a')
+                                }}
+                                    id='a'
+                                    className="">😡</span>
+
+                                <span onClick={() => {
+                                    event6b()
+                                    changeEmoji('b')
+                                }}
+                                    id='b'
+                                    className="">😥</span>
+
+                                <span onClick={() => {
+                                    event6c()
+                                    changeEmoji('c')
+                                }}
+                                    id='c'
+                                    className="">☹️</span>
+
+                                <span onClick={() => {
+                                    event6d()
+                                    changeEmoji('d')
+                                }}
+                                    id='d'
+                                    className="">😐</span>
+
+                                <span onClick={() => {
+                                    event6e()
+                                    changeEmoji('e')
+                                }}
+                                    id='e'
+                                    className="">😀</span>
+                            </h1>
                         </div>
                     </div>
 
@@ -267,60 +343,70 @@ export const Form = () => {
                         </div>
                     </div>
 
-
                     <div className="mt-5">
                         <div className="purple d-flex justify-content-center align-items-center">
                             <h3>Yesterday</h3><i className="fa-solid fa-backward"></i>
                         </div>
+                        {
+                            loading ?
+                                <h4 className="d-flex justify-content-center mt-4 mb-5 text-success">Loading...</h4>
+                                :
+                                yesV.map((thisPost) => (
+                                    <div key={thisPost.id}>
+                                        <label key={thisPost.id}><input type='checkbox' onChange={() => {
+                                            addDetails("(" + thisPost.val + ") " + thisPost.name)
 
-                        {posts.filter((post) => post.group === "Yesterday").map((thisPost) => (
-                            <div key={thisPost.id}>
-                                <label key={thisPost.id}><input type='checkbox' onChange={() => {
-                                    addDetails("(" + thisPost.val + ") " + thisPost.name)
-
-                                    var v = parseInt(thisPost.val)
-                                    calculateScore(v)
-                                }} />
-                                    <i className={thisPost.logo}></i> <kbd>{thisPost.name}</kbd></label>
-                            </div>
-                        ))}
+                                            var v = parseInt(thisPost.val)
+                                            calculateScore(v)
+                                        }} />
+                                            <i className={thisPost.logo}></i> <kbd>{thisPost.name}</kbd></label>
+                                    </div>
+                                ))
+                        }
                     </div>
-
                     <div className="mt-5">
                         <div className="green d-flex justify-content-center align-items-center">
                             <h3>Additions</h3><i className="fa-solid fa-square-plus"></i>
                         </div>
+                        {
+                            loading ?
+                                <h4 className="d-flex justify-content-center mt-4 mb-5 text-success">Loading...</h4>
+                                :
+                                addV.map((thisPost) => (
+                                    <div key={thisPost.id}>
+                                        <label key={thisPost.id}><input type='checkbox' onChange={() => {
+                                            addDetails("(" + thisPost.val + ") " + thisPost.name)
 
-                        {posts.filter((post) => post.group === "Addition").map((thisPost) => (
-                            <div key={thisPost.id}>
-                                <label key={thisPost.id}><input type='checkbox' onChange={() => {
-                                    addDetails("(" + thisPost.val + ") " + thisPost.name)
-
-                                    var v = parseInt(thisPost.val)
-                                    calculateScore(v)
-                                }} />
-                                    <i className={thisPost.logo}></i> <kbd>{thisPost.name}</kbd></label>
-                            </div>
-                        ))}
+                                            var v = parseInt(thisPost.val)
+                                            calculateScore(v)
+                                        }} />
+                                            <i className={thisPost.logo}></i> <kbd>{thisPost.name}</kbd></label>
+                                    </div>
+                                ))
+                        }
                     </div>
-
                     <div className="mt-5">
                         <div className="red d-flex justify-content-center align-items-center ">
                             <h3>Deductions</h3><i className="fa-solid fa-square-minus"></i>
                         </div>
+                        {
+                            loading ?
+                                <h4 className="d-flex justify-content-center mt-4 mb-5 text-success">Loading...</h4>
+                                :
+                                dedV.map((thisPost) => (
+                                    <div key={thisPost.id}>
+                                        <label key={thisPost.id}><input type='checkbox' onChange={() => {
+                                            addDetails("(" + thisPost.val + ") " + thisPost.name)
 
-                        {posts.filter((post) => post.group === "Deduction").map((thisPost) => (
-                            <div key={thisPost.id}>
-                                <label key={thisPost.id}><input type='checkbox' onChange={() => {
-                                    addDetails("(" + thisPost.val + ") " + thisPost.name)
-
-                                    var v = parseInt(thisPost.val)
-                                    calculateScore(v)
-                                }} />
-                                    <i className={thisPost.logo}></i> <kbd>{thisPost.name}</kbd></label>
-                            </div>
-                        ))}
+                                            var v = parseInt(thisPost.val)
+                                            calculateScore(v)
+                                        }} />
+                                            <i className={thisPost.logo}></i> <kbd>{thisPost.name}</kbd></label>
+                                    </div>
+                                ))
+                        }
                     </div>
+
                 </div>
 
 
