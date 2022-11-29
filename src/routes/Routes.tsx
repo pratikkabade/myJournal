@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes, } from "react-router-dom"
 import { Header } from "../components/Header"
 import { Form } from "../pages/Form"
 import { Home } from "../pages/Home"
-import { Calendars } from "../utils/Calendar"
+import { Calendars } from "../pages/Calendar"
 
 export const AppRoutes = () => {
     return (
