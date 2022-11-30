@@ -1,7 +1,7 @@
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../config/Firebase";
 import { SignIn } from "../security/SignIn"
-import { Form } from "./Form";
+import { Dashboard } from "./Dashboard";
 
 export const Home = () => {
     const [user] = useAuthState(auth);
@@ -9,7 +9,7 @@ export const Home = () => {
         <>
             {user?.email === 'thisispratikkabade@gmail.com' ?
                 <div>
-                    <Form />
+                    <Dashboard />
                 </div>
                 :
                 <div className="d-flex justify-content-center align-items-center flex-column noSelect" style={{ height: '80vh' }}>

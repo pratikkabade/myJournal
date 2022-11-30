@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Diff, todayDate } from "../config/Date"
 import { changeEmoji, changeIT } from "../utils/Functions"
 
-export const Form = () => {
+export const Journal = () => {
 
     // States
     const [goal, setGoal] = useState('')
@@ -177,7 +177,13 @@ export const Form = () => {
     return (
         <div>
             <div className="contactForm">
-                <h1>Journal <i className="fa-regular fa-calendar"></i> </h1>
+                <div className="noSelect pt-3">
+                    <div className="mt-5">
+                        <div className="green d-flex justify-content-center align-items-center font-weight-bold">
+                            <h3>Journal</h3><i className="fa-regular fa-calendar"></i>
+                        </div>
+                    </div>
+                </div>
 
                 <div className="noSelect">
                     <div className="mt-5">
