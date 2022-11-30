@@ -27,27 +27,15 @@ export const Header = () => {
                 <div className='collapse navbar-collapse justify-content-end' id='navbarSupportedContent'>
                     {user ?
                         <>
-                            {document.title === 'Journal' ?
-                                <button className='btn-accent green blk pg' onClick={title}>Journal</button>
-                                :
-                                <Link to='/myJournal/Journal'>
-                                    <button className='btn-accent green blk' onClick={title}>Journal</button>
-                                </Link>
-                            }
-                            {document.title === 'Calendar' ?
-                                <button className='btn-accent blue blk pg' onClick={title}>Calendar</button>
-                                :
-                                <Link to='/myJournal/Calendar'>
-                                    <button className='btn-accent blue blk' onClick={title}>Calendar</button>
-                                </Link>
-                            }
-                            {document.title === 'Records' ?
-                                <button className='btn-accent purple blk pg' onClick={title}>Records</button>
-                                :
-                                <Link to='/myJournal/Records'>
-                                    <button className='btn-accent purple blk' onClick={title}>Records</button>
-                                </Link>
-                            }
+                            <Link to='/myJournal/Journal'>
+                                <button className='btn-accent green blk' onClick={title}>Journal</button>
+                            </Link>
+                            <Link to='/myJournal/Calendar'>
+                                <button className='btn-accent blue blk' onClick={title}>Calendar</button>
+                            </Link>
+                            <Link to='/myJournal/Records'>
+                                <button className='btn-accent purple blk' onClick={title}>Records</button>
+                            </Link>
                             <SignOut />
                         </>
                         :

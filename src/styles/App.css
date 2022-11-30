@@ -192,17 +192,6 @@ i {
     color: rgb(141, 0, 141);
 }
 
-.blk {
-    box-shadow: var(--shadowtiny);
-    border-radius: 10px;
-}
-
-.pg {
-    filter: brightness(1.05);
-    color: black;
-    box-shadow: var(--shadowsmall);
-}
-
 .pg:hover {
     cursor: default;
     color: black;
@@ -247,4 +236,12 @@ i {
     font-weight: 400;
     font-size: 17px;
     transition: 0.15s;
+}
+
+#hrtLogo {
+    border: none;
+}
+
+#scrollTop i {
+    margin: 0px !important;
 }
