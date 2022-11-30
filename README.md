@@ -6,9 +6,12 @@ Currently **not** published for **other users**.
 
 Built with `TypeScript` and with basics of `React` 
 
-and now backed up on `Google Firebase`.
+### Technologies
+Language    | Framework     | Database      | Feat.       | Feat.
+----------- | -----------   | -----------   | ----------  | -----------
+<img src="https://raw.githubusercontent.com/dependabot-pr/Static-Files/main/Assets/Logo/Technologies/TypeScript.svg" alt="drawing" width="75" /> | <img src="https://raw.githubusercontent.com/dependabot-pr/Static-Files/main/Assets/Logo/Technologies/React.svg" alt="drawing" width="75"/> | <img src="https://raw.githubusercontent.com/dependabot-pr/Static-Files/main/Assets/Logo/Technologies/Firebase.svg" alt="drawing" width="75"/> |  <img src="https://raw.githubusercontent.com/dependabot-pr/Static-Files/main/Assets/Logo/Sheets.svg" alt="drawing" width="75"/> |<img src="https://raw.githubusercontent.com/dependabot-pr/Static-Files/main/Assets/Logo/Calendar.svg" alt="drawing" width="75"/> |
+TypeScript  | React         | Firebase      | Sheets     | Calendar
 
-### Start Date is defined in the `./scr/config/Date.tsx` file
 
 ### Note
 
@@ -23,32 +26,6 @@ and now backed up on `Google Firebase`.
 ="{from: '"&TEXT(A2,"mm-dd-yyyy")&"', to: '"&TEXT(B2,"mm-dd-yyyy")&"'},"
 ```
 
-https://calendar.google.com/calendar/u/0/r/eventedit?text=day 9:  (9)&dates=20221128/20221128&details=sdf
+### Screenshot
 
-Check-in: 5
-
-Reasons: sdf
-Underlyings: sdf
-
-Problems: sdf
-Steps: sdf
-
-Todays Goal: sdf
-Grateful for: sdf
-
-Recorded\n
-Tasks\n
-Early Sleep\n
-Early Wake\n
-Meditation\n
-Talks\n
-Coding\n
-Project work\n
-Connects\n
-Out of Zone\n
-Food\n
-Hrs Wasted\n
-Negativity\n
-Music\n
-Sleep\n
-Burnout\n
+![image](https://user-images.githubusercontent.com/76637730/204713427-97f85098-b6ba-4619-b8db-8f776cf330a5.png)
