@@ -194,17 +194,57 @@ i {
 
 .blk {
     box-shadow: var(--shadowtiny);
+    border-radius: 10px;
 }
 
 .pg {
     filter: brightness(1.05);
     color: black;
-    box-shadow: none;
+    box-shadow: var(--shadowsmall);
 }
 
 .pg:hover {
     cursor: default;
     color: black;
+    border-radius: 10px;
     filter: brightness(1.05);
-    box-shadow: none;
+    box-shadow: var(--shadow);
+}
+
+.calImg img {
+    height: 30px !important;
+    width: 30px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+.contactForm select {
+    color: var(--accentdark);
+    background: var(--accentdim4);
+    border: 2px solid var(--accentdim3);
+    padding: 0 15px 0 15px;
+    border-radius: 7px;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.15s;
+}
+
+.contactForm select:focus {
+    outline: none;
+    border: 2px solid var(--accent);
+    background: var(--accentdim4);
+    transition: 0.15s;
+}
+
+.contactForm select::placeholder {
+    color: var(--accentdim0);
+    font-weight: 400;
+    font-size: 17px;
+    transition: 0.15s;
 }

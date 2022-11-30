@@ -44,18 +44,30 @@ export const Calendars = () => {
 
     return (
         <div className="Reader">
+            <div className="contactForm">
+                <div className="noSelect pt-3">
+                    <div className="mt-5">
+                        <div className="blue d-flex justify-content-center align-items-center font-weight-bold">
+                            <h3>Calendar</h3><i className="fa-solid fa-calendar"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <select value={req} onChange={handleChange} onClick={fetchData} className="mt-5">
+                    {options.map(option => (
+                        <option key={option.value} value={option.value}>
+                            {option.text}
+                        </option>
+                    ))}
+                </select>
+            </div>
+
             {loading ? <h2 className="d-flex justify-content-center pushDown100">Select option from the drop down</h2> :
                 <Calendar bookings={bookings} />
             }
 
-            <select value={req} onChange={handleChange} onClick={fetchData} className="form-select pushDown100 mb-5">
-                {options.map(option => (
-                    <option key={option.value} value={option.value}>
-                        {option.text}
-                    </option>
-                ))}
-            </select>
-        </div>
+            <span className='anchor'></span>
+        </div >
     )
 }
 
