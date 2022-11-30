@@ -17,7 +17,7 @@ export const Header = () => {
             <div className='container-fluid'>
                 <ul className='navbar-nav justify-content-start'>
                     <Link to='/myJournal'>
-                        <img alt='a' id='hrtLogo' src='https://avatars.githubusercontent.com/u/108847584?s=200&v=4' draggable='false' />
+                        <img alt='a' id='hrtLogo' src='https://raw.githubusercontent.com/dependabot-pr/Static-Files/main/Assets/myJournal.svg' draggable='false' />
                     </Link>
                 </ul>
                 <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
