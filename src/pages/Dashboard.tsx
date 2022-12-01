@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom"
 
 export const Dashboard = () => {
+    // TITLE
+    useEffect(() => {
+        document.title = 'Dashboard';
+    });
+
     return (
         <>
             <div className="mainSection">

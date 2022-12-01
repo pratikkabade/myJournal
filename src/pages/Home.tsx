@@ -50,6 +50,7 @@ export const Home = () => {
     // USE EFFECT
     useEffect(() => {
         fetchData()
+        document.title = "Home"
     })
 
     return (

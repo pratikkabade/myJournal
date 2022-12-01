@@ -2,15 +2,9 @@ import { auth } from "../config/Firebase";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom'
 import { SignOut } from "../security/SignOut";
-import { useEffect } from "react";
-import { title } from "../utils/Title";
 
 export const Header = () => {
     const [user] = useAuthState(auth);
-
-    useEffect(() => {
-        title()
-    }, [])
 
     return (
         <nav className='navbar navbar-expand-sm bg-light fixed-top' id='customNav' style={{ boxShadow: 'var(--shadowtiny)' }}>
@@ -28,13 +22,13 @@ export const Header = () => {
                     {user ?
                         <>
                             <Link to='/myJournal/Journal'>
-                                <button className='btn-accent green blk' onClick={title}>Journal</button>
+                                <button className='btn-accent green blk'>Journal</button>
                             </Link>
                             <Link to='/myJournal/Calendar'>
-                                <button className='btn-accent blue blk' onClick={title}>Calendar</button>
+                                <button className='btn-accent blue blk'>Calendar</button>
                             </Link>
                             <Link to='/myJournal/Records'>
-                                <button className='btn-accent purple blk' onClick={title}>Records</button>
+                                <button className='btn-accent purple blk'>Records</button>
                             </Link>
                             <SignOut />
                         </>

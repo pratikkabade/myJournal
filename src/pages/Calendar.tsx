@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Calendar from 'reactjs-availability-calendar'
 import '../styles/Calendar.css';
 import { options } from '../utils/CalendarOptions';
 
 export const Calendars = () => {
-    // fetch data from google sheets
+    // TITLE
+    useEffect(() => {
+        document.title = 'Calendar';
+    });
+    // FETCH DATA FROM GOOGLE SHEETS API
     const [data, setData] = useState([]);
     const [req, setReq] = useState('');
     const [loading, setLoading] = useState(true);

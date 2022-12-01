@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
 
 export const Records = () => {
+    // TITLE
+    useEffect(() => {
+        document.title = 'Records';
+    });
 
     // sheet
     const [rec, setRec] = useState([])
