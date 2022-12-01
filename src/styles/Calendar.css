@@ -12,7 +12,7 @@
 }
 
 .booked {
-    background-color: var(--accentdark);
+    background-color: var(--accent);
     border-radius: 20px;
     color: #ffffff;
 }

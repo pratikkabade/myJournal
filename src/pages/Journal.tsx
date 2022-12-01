@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Diff, todayDate } from "../config/Date"
+import { startDate } from "../config/Date"
 import { changeEmoji, changeIT } from "../utils/Functions"
 
 export const Journal = () => {
@@ -11,7 +11,7 @@ export const Journal = () => {
     const [problem, setProblem] = useState('')
     const [step, setStep] = useState('')
     const [grt, setGrt] = useState('')
-    const [date1, setDate1] = useState(todayDate)
+    const [date1, setDate1] = useState('')
     const [details, setDetails] = useState('')
     const [score, setScore] = useState(0)
     // sheet
@@ -20,8 +20,22 @@ export const Journal = () => {
     const [dedV, setDedV] = useState([])
     const [loading, setLoading] = useState(true)
 
+
+    // CONVERT DATE1 TO DATE
+    const date1S = date1.toString()
+    const yearS = date1S.slice(0, 4)
+    const monthS = date1S.slice(4, 6)
+    const dayS = date1S.slice(6, 8)
+    const date1d = new Date(monthS + '/' + dayS + '/' + yearS);
+    // const date1D = new Date(date1d);
+
+    // CALCULATE DIFFERENCE
+    const date2 = new Date(startDate);
+    const diffTime = Math.abs(+date1d - +date2);
+    const theDiffBase = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
     // Functions
-    const theDiff = Diff(date1)
+    const theDiff = theDiffBase
     const finalText = 'day ' + theDiff + ':  (' + score + ')'
 
     // Submit
@@ -170,6 +184,7 @@ export const Journal = () => {
     // USE EFFECT
     useEffect(() => {
         fetchData()
+        document.title = 'Journal';
     })
 
 
