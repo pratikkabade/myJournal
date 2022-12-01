@@ -1,16 +1,10 @@
-import './App.css';
-import { Header } from './components/Header';
-import { Home } from './pages/Home';
-import { Form } from './pages/Form';
+import { AppRoutes } from './routes/Routes';
+import './styles/App.css';
 
 function App() {
   return (
     <>
-      <Header />
-      <Home />
-      <span className='anchor pushDown' id='form'></span>
-      <Form />
-      <span className='anchor'></span>
+      <AppRoutes />
     </>
   );
 }

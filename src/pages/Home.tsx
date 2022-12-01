@@ -1,24 +1,73 @@
-export const Home = () => {
-    const h1 = {
-        fontSize: "60px",
-    };
-    const p = {
-        marginTop: "25%",
-        fontSize: "30px",
-    };
-    const a = {
-        color: 'white',
-        fontSize: "30px",
-    };
+import { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../config/Firebase";
+import { SignIn } from "../security/SignIn"
+import { Dashboard } from "./Dashboard";
 
+export const Home = () => {
+    const [user] = useAuthState(auth);
+
+    // sheet
+    const [email, setEmail] = useState([])
+
+    // SHEET FUNCTIONS
+    const url = "https://script.google.com/macros/s/AKfycbzcUU_Qa6vthx_X-bBZcoALtOe5coqAc8bsOFFeFxCKH1oDGUGzQCVWL_NDKvo7W45iuw/exec";
+
+    const fetchData = async () => {
+        const response = await fetch(url);
+        const values = await response.json();
+
+        const emailValues = values.users;
+
+        // split val  by ,
+        const rVal = emailValues.map((item: any) => {
+            return {
+                item: item.split('|||')
+            }
+        })
+
+        // return item vise allotment
+        const rVal2 = rVal.map((item: any) => {
+            return {
+                email: item.item[0],
+            }
+        })
+
+        // DONT RETURN EMPTY VALUES
+        const finalVal = rVal2.filter((item: any) => {
+            return item.email !== ''
+        })
+
+        // CHECK FOR USER
+        const finalVal2 = finalVal.filter((item: any) => {
+            return item.email === user?.email
+        })
+
+        console.log(finalVal2);
+        setEmail(finalVal2)
+    }
+
+    // USE EFFECT
+    useEffect(() => {
+        fetchData()
+        document.title = "Home"
+    })
 
     return (
-        <div className="full skew-down">
-            <div className="inskew-down pushDown noSelect flex">
-                <h1 style={h1}>Google Calendar Link <i className="fa-regular fa-calendar"></i></h1>
-                <p style={p}>Fill out the form below and get the desired link</p>
-                <a style={a} href="#form">Scroll Down <i className="fa-solid fa-arrow-down rotateCW "></i></a>
-            </div>
-        </div>
+        <>
+            {
+                email.length !== 0
+                    ?
+                    <div>
+                        <Dashboard />
+                    </div>
+                    :
+                    <div className="d-flex justify-content-center align-items-center flex-column noSelect" style={{ height: '80vh' }}>
+                        <h1><span className="text-danger">Partially Restricted</span> as for <span className="text-success">now</span></h1>
+                        <br /><br />
+                        <SignIn />
+                    </div>
+            }
+        </>
     )
 }
