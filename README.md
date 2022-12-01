@@ -12,6 +12,7 @@ Language    | Framework     | Database      | Feat.       | Feat.
 <img src="https://raw.githubusercontent.com/dependabot-pr/Static-Files/main/Assets/Logo/Technologies/TypeScript.svg" alt="drawing" width="75" /> | <img src="https://raw.githubusercontent.com/dependabot-pr/Static-Files/main/Assets/Logo/Technologies/React.svg" alt="drawing" width="75"/> | <img src="https://raw.githubusercontent.com/dependabot-pr/Static-Files/main/Assets/Logo/Technologies/Firebase.svg" alt="drawing" width="75"/> |  <img src="https://raw.githubusercontent.com/dependabot-pr/Static-Files/main/Assets/Logo/Sheets.svg" alt="drawing" width="75"/> |<img src="https://raw.githubusercontent.com/dependabot-pr/Static-Files/main/Assets/Logo/Calendar.svg" alt="drawing" width="75"/> |
 TypeScript  | React         | Firebase      | Sheets     | Calendar
 
+[![wakatime](https://wakatime.com/badge/user/94eceae7-683a-4d18-a44b-59d4ffd2eb5d/project/564d5748-2bf1-43f3-b8a3-52d9dbaa02ee.svg)](https://wakatime.com/@pratikkabade/projects/gjodqsatdd)
 
 ### Note
 
