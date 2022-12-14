@@ -2,12 +2,12 @@ export const options = [
     { value: '', text: '--Choose an option--' },
 
     { value: '', text: '' },
-    { value: 'Recorded', text: '🧾 Recorded' },
-    { value: 'Tasks', text: '📃 Tasks ' },
     { value: 'Early Sleep', text: '🌃 Early Sleep ' },
+    { value: 'Early Wake', text: '🌅 Early Wake ' },
+    { value: 'Tasks', text: '📃 Tasks ' },
 
     { value: '', text: '' },
-    { value: 'Early Wake', text: '🌅 Early Wake ' },
+    { value: 'Recorded', text: '🧾 Recorded' },
     { value: 'Meditation', text: '🟠 Meditation ' },
     { value: 'Talks', text: '🗣️ Talks ' },
     { value: 'Coding', text: '💻 Coding ' },
@@ -22,4 +22,12 @@ export const options = [
     { value: 'Music', text: '🎵 Music ' },
     { value: 'Sleep', text: '💤 Sleep ' },
     { value: 'Burnout', text: '♨️ Burnout ' },
+
+    { value: '', text: '' },
+    { value: '5', text: '😀  ' },
+    { value: '4', text: '😐  ' },
+    { value: '3', text: '☹️  ' },
+    { value: '2', text: '😥  ' },
+    { value: '1', text: '😡  ' },
+
 ];

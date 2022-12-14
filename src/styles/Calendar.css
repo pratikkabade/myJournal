@@ -42,7 +42,7 @@
 /* controls  */
 
 .controls {
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
@@ -62,6 +62,11 @@
     padding: 13px 20px;
     margin: 0;
     cursor: pointer;
+}
+
+.controls .btn:hover {
+    filter: brightness(1.1);
+    box-shadow: var(--shadowsmall);
 }
 
 /* year  */
