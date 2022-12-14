@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { startDate } from "../config/Date"
+import { SheetsURL } from "../config/SheetsURL"
 import { changeEmoji, changeIT } from "../utils/Functions"
 
 export const Journal = () => {
@@ -106,7 +107,7 @@ export const Journal = () => {
     // // WATCH `Firebase` BRANCH FOR CHANGES
 
     // SHEET FUNCTIONS
-    const url = "https://script.google.com/macros/s/AKfycbzcUU_Qa6vthx_X-bBZcoALtOe5coqAc8bsOFFeFxCKH1oDGUGzQCVWL_NDKvo7W45iuw/exec";
+    const url = SheetsURL;
 
     const fetchData = async () => {
         const response = await fetch(url);

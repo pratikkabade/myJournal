@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../config/Firebase";
+import { SheetsURL } from "../config/SheetsURL";
 import { SignIn } from "../security/SignIn"
 import { Dashboard } from "./Dashboard";
 
@@ -11,7 +12,7 @@ export const Home = () => {
     const [email, setEmail] = useState([])
 
     // SHEET FUNCTIONS
-    const url = "https://script.google.com/macros/s/AKfycbzcUU_Qa6vthx_X-bBZcoALtOe5coqAc8bsOFFeFxCKH1oDGUGzQCVWL_NDKvo7W45iuw/exec";
+    const url = SheetsURL;
 
     const fetchData = async () => {
         const response = await fetch(url);

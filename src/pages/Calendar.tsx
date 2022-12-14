@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Calendar from 'reactjs-availability-calendar'
+import { SheetsURL } from '../config/SheetsURL';
 import '../styles/Calendar.css';
 import { options } from '../utils/CalendarOptions';
 
@@ -13,7 +14,7 @@ export const Calendars = () => {
     const [req, setReq] = useState('');
     const [loading, setLoading] = useState(true);
 
-    const url = "https://script.google.com/macros/s/AKfycbzcUU_Qa6vthx_X-bBZcoALtOe5coqAc8bsOFFeFxCKH1oDGUGzQCVWL_NDKvo7W45iuw/exec";
+    const url = SheetsURL;
 
     const fetchData = async () => {
         const response = await fetch(url);
@@ -64,6 +65,15 @@ export const Calendars = () => {
                         </option>
                     ))}
                 </select>
+
+
+                <div className="d-flex justify-content-center mt-3 ">
+                    <a href="https://calendar.google.com" rel="noreferrer" target={'_blank'} className="btn-accent mt-3 blk skyblue blk calImg" >
+                        Open Calendar
+                        <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+
             </div>
 
             {loading ? <h2 className="d-flex justify-content-center pushDown100">Select option from the drop down</h2> :
