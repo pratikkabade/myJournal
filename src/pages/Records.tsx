@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
+import { SheetsURL } from "../config/SheetsURL";
 
 export const Records = () => {
     // TITLE
     useEffect(() => {
         document.title = 'Records';
+        fetchData();
     });
 
     // sheet
@@ -12,7 +14,7 @@ export const Records = () => {
     const [loading, setLoading] = useState(true)
 
     // SHEET FUNCTIONS
-    const url = "https://script.google.com/macros/s/AKfycbzcUU_Qa6vthx_X-bBZcoALtOe5coqAc8bsOFFeFxCKH1oDGUGzQCVWL_NDKvo7W45iuw/exec";
+    const url = SheetsURL;
 
     const fetchData = async () => {
         const response = await fetch(url);
@@ -52,25 +54,12 @@ export const Records = () => {
             return item.date === date
         })
 
-        // REMOVE "\n" FROM VALUES
-        const finalVal3 = finalVal2.filter((item: any) => {
-            return {
-                date: item.date.replace(/\n/g, ""),
-                score: item.score.replace(/\n/g, ""),
-                check: item.check.replace(/\n/g, ""),
-                reason: item.reason.replace(/\n/g, ""),
-                underlying: item.underlying.replace(/\n/g, ""),
-                problem: item.problem.replace(/\n/g, ""),
-                steps: item.steps.replace(/\n/g, ""),
-                today: item.today.replace(/\n/g, ""),
-                gratitude: item.gratitude.replace(/\n/g, ""),
-            }
-        })
-
-        setRec(finalVal3)
+        setRec(finalVal2)
         setLoading(false)
     }
 
+    // CONVERT DATE TO 2021/12/8 FORMAT
+    const date2 = date.replace(/-/g, '/');
 
     // Output
     return (
@@ -94,23 +83,49 @@ export const Records = () => {
                                 </div>
                                 :
                                 rec.map((thisPost) => (
-                                    <div key={thisPost.id}>
-                                        <h4>Date: {
-                                            // convert date to nov 12, 2020
-                                            new Date(thisPost.date).toLocaleDateString('en-US', {
-                                                month: 'long',
-                                                day: 'numeric'
-                                            })
-                                        }
-                                        </h4>
-                                        <h4>{thisPost.score === "" ? <></> : "Score: " + thisPost.score}</h4>
-                                        <h4>{thisPost.check === "" ? <></> : "Check: " + thisPost.check}</h4>
-                                        <h4>{thisPost.reason === "" ? <></> : "Reason: " + thisPost.reason}</h4>
-                                        <h4>{thisPost.underlying === "" ? <></> : "Underlying: " + thisPost.underlying}</h4>
-                                        <h4>{thisPost.problem === "" ? <></> : "Problem: " + thisPost.problem}</h4>
-                                        <h4>{thisPost.steps === "" ? <></> : "Steps: " + thisPost.steps}</h4>
-                                        <h4>{thisPost.today === "" ? <></> : "Today: " + thisPost.today}</h4>
-                                        <h4>{thisPost.gratitude === "" ? <></> : "Gratitude: " + thisPost.gratitude}</h4>
+                                    <div key={thisPost.id} style={{ fontSize: '20px' }}>
+                                        <p>
+                                            <b>Date: </b>
+                                            {
+                                                // convert date to nov 12, 2020
+                                                new Date(thisPost.date).toLocaleDateString('en-US', {
+                                                    month: 'long',
+                                                    day: 'numeric'
+                                                })
+                                            }
+                                        </p>
+                                        <p>
+                                            <b>{thisPost.score === "" ? <></> : "Score: "}</b>
+                                            {thisPost.score === "" ? <></> : thisPost.score}
+                                        </p>
+                                        <p>
+                                            <b>{thisPost.check === "" ? <></> : "Check: "}</b>
+                                            {thisPost.check === "" ? <></> : thisPost.check}
+                                        </p>
+                                        <p>
+                                            <b>{thisPost.reason === "" ? <></> : "Reason: "}</b>
+                                            {thisPost.reason === "" ? <></> : thisPost.reason}
+                                        </p>
+                                        <p>
+                                            <b>{thisPost.underlying === "" ? <></> : "Underlying: "}</b>
+                                            {thisPost.underlying === "" ? <></> : thisPost.underlying}
+                                        </p>
+                                        <p>
+                                            <b>{thisPost.problem === "" ? <></> : "Problem: "}</b>
+                                            {thisPost.problem === "" ? <></> : thisPost.problem}
+                                        </p>
+                                        <p>
+                                            <b>{thisPost.steps === "" ? <></> : "Steps: "}</b>
+                                            {thisPost.steps === "" ? <></> : thisPost.steps}
+                                        </p>
+                                        <p>
+                                            <b>{thisPost.today === "" ? <></> : "Today: "}</b>
+                                            {thisPost.today === "" ? <></> : thisPost.today}
+                                        </p>
+                                        <p>
+                                            <b>{thisPost.gratitude === "" ? <></> : "Gratitude: "}</b>
+                                            {thisPost.gratitude === "" ? <></> : thisPost.gratitude}
+                                        </p>
                                     </div>
                                 ))
                         }
@@ -118,7 +133,7 @@ export const Records = () => {
                 </div>
 
                 <div className="d-flex justify-content-center mt-3 ">
-                    <a href="https://calendar.google.com" rel="noreferrer" className="btn-accent mt-3 blk skyblue blk calImg">
+                    <a href={"https://calendar.google.com/calendar/u/0/r/agenda/" + date2} rel="noreferrer" target={'_blank'} className="btn-accent mt-3 blk skyblue blk calImg">
                         Open Calendar
                         <i className="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
