@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import { SheetsURL } from "../config/SheetsURL";
 
-export const Records = () => {
+export const Reports = () => {
     // TITLE
     useEffect(() => {
-        document.title = 'Records';
+        document.title = 'Reports';
         fetchData();
     });
 
@@ -68,7 +68,7 @@ export const Records = () => {
                 <div className="noSelect pt-3">
                     <div className="mt-5">
                         <div className="purple d-flex justify-content-center align-items-center font-weight-bold">
-                            <h3>Records</h3><i className="fa-solid fa-backward"></i>
+                            <h3>Reports</h3><i className="fa-solid fa-backward"></i>
                         </div>
                         <input type="date" onChange={(e) => {
                             setDate(e.target.value)

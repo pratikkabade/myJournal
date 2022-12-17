@@ -27,8 +27,8 @@ export const Header = () => {
                             <Link to='/myJournal/Calendar'>
                                 <button className='btn-accent blue blk'>Calendar</button>
                             </Link>
-                            <Link to='/myJournal/Records'>
-                                <button className='btn-accent purple blk'>Records</button>
+                            <Link to='/myJournal/Reports'>
+                                <button className='btn-accent purple blk'>Reports</button>
                             </Link>
                             <SignOut />
                         </>
