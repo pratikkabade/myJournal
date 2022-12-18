@@ -19,10 +19,25 @@ export const Dashboard = () => {
                     <Link to={"/myJournal/Journal"} className="btn-accent green blk">Journal 📃</Link>
                 </div>
                 <div className="subSection d-flex justify-content-center">
+                    <Link to={"/myJournal/Notes"} className="btn-accent green blk">Notes 📒</Link>
+                </div>
+            </div>
+            <div className="mainSection">
+                <div className="subSection d-flex justify-content-center">
                     <Link to={"/myJournal/Calendar"} className="btn-accent blue blk">Calendar 📆</Link>
                 </div>
+            </div>
+            <div className="mainSection">
                 <div className="subSection d-flex justify-content-center">
                     <Link to={"/myJournal/Reports"} className="btn-accent purple blk">Reports 📂</Link>
+                </div>
+            </div>
+            <div className="mainSection">
+                <div className="subSection d-flex justify-content-center">
+                    <Link to={"/myJournal/Reports/Notes"} className="btn-accent purple blk">Notes Report 📒</Link>
+                </div>
+                <div className="subSection d-flex justify-content-center">
+                    <Link to={"/myJournal/Reports/Months"} className="btn-accent purple blk">Month Report 📒</Link>
                 </div>
             </div>
 

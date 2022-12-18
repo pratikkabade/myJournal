@@ -448,7 +448,7 @@ export const Journal = () => {
                     </div>
                 </div>
 
-                <div className="d-flex justify-content-center mt-3">
+                <div className="d-flex justify-content-center mt-3  pb-3">
                     <a href={Word} target={"_blank"} rel="noreferrer" className="btn-accent mt-3 blk green">
                         Save
                         <i className="fa-solid fa-arrow-up-right-from-square">

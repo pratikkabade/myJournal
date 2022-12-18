@@ -67,8 +67,8 @@ export const Calendars = () => {
                 </select>
 
 
-                <div className="d-flex justify-content-center mt-3 ">
-                    <a href="https://calendar.google.com" rel="noreferrer" target={'_blank'} className="btn-accent mt-3 blk skyblue blk calImg" >
+                <div className="d-flex justify-content-center mt-5 pb-3 ">
+                    <a href="https://calendar.google.com" rel="noreferrer" target={'_blank'} className="btn-accent blk skyblue blk calImg" >
                         Open Calendar
                         <i className="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>

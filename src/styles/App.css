@@ -152,8 +152,8 @@ i {
 }
 
 #customNav {
-    background-color: rgba(0, 0, 0, 0) !important;
-    backdrop-filter: blur(0px) !important;
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
     box-shadow: none !important;
 }
 
@@ -240,8 +240,63 @@ i {
 
 #hrtLogo {
     border: none;
+    border-radius: 5px;
 }
 
 #scrollTop i {
     margin: 0px !important;
+}
+
+a{
+    cursor: pointer !important;
+}
+
+.note{
+    display: flex;
+    align-items: center;
+    padding: 16px 10px 10px 20px;
+    border-radius: 10px;
+    transition: 0.15s;
+}
+.note:hover{
+    transition: 0.15s;
+    box-shadow: var(--accentshadowtiny);
+}
+.note .timeNote{
+    background-color: var(--accentdim4);
+    border: 1px solid var(--accent);
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+.note .timeNote p{
+    margin: 0px !important;
+}
+
+.mainSection .month {
+    margin: 0px 20px 0px 20px;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--accentdark);
+    text-align: center;
+}
+.mainSection .month .mon{
+    margin-top: 20px;
+}
+.mainSection .month .val{
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--accentdark);
+    text-align: center;
+}
+
+.subSection {
+    box-shadow: none;
+    border: 1px solid var(--accentdim3);
+    border-radius: 5px;
+    transition: 0.15s;
+}
+.subSection:hover {
+    border-radius: 15px;
+    transition: 0.15s;
 }

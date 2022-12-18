@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 import { SheetsURL } from "../config/SheetsURL";
 
 export const Reports = () => {
@@ -82,61 +83,74 @@ export const Reports = () => {
                                     <h4 className="d-flex justify-content-center mb-5 text-primary">Try again</h4>
                                 </div>
                                 :
-                                rec.map((thisPost) => (
-                                    <div key={thisPost.id} style={{ fontSize: '20px' }}>
-                                        <p>
-                                            <b>Date: </b>
-                                            {
-                                                // convert date to nov 12, 2020
-                                                new Date(thisPost.date).toLocaleDateString('en-US', {
-                                                    month: 'long',
-                                                    day: 'numeric'
-                                                })
-                                            }
-                                        </p>
-                                        <p>
-                                            <b>{thisPost.score === "" ? <></> : "Score: "}</b>
-                                            {thisPost.score === "" ? <></> : thisPost.score}
-                                        </p>
-                                        <p>
-                                            <b>{thisPost.check === "" ? <></> : "Check: "}</b>
-                                            {thisPost.check === "" ? <></> : thisPost.check}
-                                        </p>
-                                        <p>
-                                            <b>{thisPost.reason === "" ? <></> : "Reason: "}</b>
-                                            {thisPost.reason === "" ? <></> : thisPost.reason}
-                                        </p>
-                                        <p>
-                                            <b>{thisPost.underlying === "" ? <></> : "Underlying: "}</b>
-                                            {thisPost.underlying === "" ? <></> : thisPost.underlying}
-                                        </p>
-                                        <p>
-                                            <b>{thisPost.problem === "" ? <></> : "Problem: "}</b>
-                                            {thisPost.problem === "" ? <></> : thisPost.problem}
-                                        </p>
-                                        <p>
-                                            <b>{thisPost.steps === "" ? <></> : "Steps: "}</b>
-                                            {thisPost.steps === "" ? <></> : thisPost.steps}
-                                        </p>
-                                        <p>
-                                            <b>{thisPost.today === "" ? <></> : "Today: "}</b>
-                                            {thisPost.today === "" ? <></> : thisPost.today}
-                                        </p>
-                                        <p>
-                                            <b>{thisPost.gratitude === "" ? <></> : "Gratitude: "}</b>
-                                            {thisPost.gratitude === "" ? <></> : thisPost.gratitude}
-                                        </p>
+                                // IF DATE IS EMPTY
+                                date === "" ?
+                                    <div>
+                                        <h4 className="d-flex justify-content-center mt-4 text-danger">No data found</h4>
+                                        <h4 className="d-flex justify-content-center mb-5 text-primary">Try again</h4>
                                     </div>
-                                ))
+                                    :
+                                    rec.map((thisPost) => (
+                                        <div key={thisPost.id} style={{ fontSize: '20px' }}>
+                                            <p>
+                                                <b>Date: </b>
+                                                {
+                                                    // convert date to nov 12, 2020
+                                                    new Date(thisPost.date).toLocaleDateString('en-US', {
+                                                        month: 'long',
+                                                        day: 'numeric'
+                                                    })
+                                                }
+                                            </p>
+                                            <p>
+                                                <b>{thisPost.score === "" ? <></> : "Score: "}</b>
+                                                {thisPost.score === "" ? <></> : thisPost.score}
+                                            </p>
+                                            <p>
+                                                <b>{thisPost.check === "" ? <></> : "Check: "}</b>
+                                                {thisPost.check === "" ? <></> : thisPost.check}
+                                            </p>
+                                            <p>
+                                                <b>{thisPost.reason === "" ? <></> : "Reason: "}</b>
+                                                {thisPost.reason === "" ? <></> : thisPost.reason}
+                                            </p>
+                                            <p>
+                                                <b>{thisPost.underlying === "" ? <></> : "Underlying: "}</b>
+                                                {thisPost.underlying === "" ? <></> : thisPost.underlying}
+                                            </p>
+                                            <p>
+                                                <b>{thisPost.problem === "" ? <></> : "Problem: "}</b>
+                                                {thisPost.problem === "" ? <></> : thisPost.problem}
+                                            </p>
+                                            <p>
+                                                <b>{thisPost.steps === "" ? <></> : "Steps: "}</b>
+                                                {thisPost.steps === "" ? <></> : thisPost.steps}
+                                            </p>
+                                            <p>
+                                                <b>{thisPost.today === "" ? <></> : "Today: "}</b>
+                                                {thisPost.today === "" ? <></> : thisPost.today}
+                                            </p>
+                                            <p>
+                                                <b>{thisPost.gratitude === "" ? <></> : "Gratitude: "}</b>
+                                                {thisPost.gratitude === "" ? <></> : thisPost.gratitude}
+                                            </p>
+                                        </div>
+                                    ))
                         }
                     </div>
                 </div>
 
-                <div className="d-flex justify-content-center mt-3 ">
-                    <a href={"https://calendar.google.com/calendar/u/0/r/agenda/" + date2} rel="noreferrer" target={'_blank'} className="btn-accent mt-3 blk skyblue blk calImg">
-                        Open Calendar
-                        <i className="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
+                <div className="d-flex flex-column justify-content-center mt-5 align-items-center  pb-3">
+                    <div className="d-flex">
+                        <a href={"https://calendar.google.com/calendar/u/0/r/agenda/" + date2} rel="noreferrer" target={'_blank'} className="btn-accent blk blue blk calImg">
+                            Open in Calendar
+                            <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                    <div className="d-flex mt-3">
+                        <Link to={'/myJournal/Reports/Notes'} className="btn-accent blk skyblue blk calImg"> Notes Report <i className="fa-solid fa-arrow-right"></i>  </Link>
+                        <Link to={'/myJournal/Reports/Months'} className="btn-accent blk skyblue blk calImg"> Month Report <i className="fa-solid fa-arrow-right"></i>  </Link>
+                    </div>
                 </div>
 
             </div>
