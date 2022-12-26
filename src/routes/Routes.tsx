@@ -11,19 +11,24 @@ import { ReportMonth } from "../pages/ReportMonth"
 
 export const AppRoutes = () => {
     return (
-        <BrowserRouter>
-            <Header />
-            <Routes>
-                <Route path='/myJournal/' element={<Home />} />
-                <Route path='/myJournal/*' element={<Dashboard />} />
-                <Route path='/myJournal/Dashboard' element={<Dashboard />} />
-                <Route path='/myJournal/Journal' element={<Journal />} />
-                <Route path='/myJournal/Calendar' element={<Calendars />} />
-                <Route path='/myJournal/Reports' element={<Reports />} />
-                <Route path='/myJournal/Reports/Notes' element={<ReportNote />} />
-                <Route path='/myJournal/Reports/Months' element={<ReportMonth />} />
-                <Route path='/myJournal/Notes' element={<Notes />} />
-            </Routes>
-        </BrowserRouter>
+        <div className="HTML">
+            <div className="BODY">
+                <BrowserRouter>
+                    <Header />
+                    <Routes>
+                        <Route path='/myJournal/' element={<Home />} />
+                        <Route path='/myJournal/*' element={<Dashboard />} />
+                        <Route path='/myJournal/Dashboard' element={<Dashboard />} />
+                        <Route path='/myJournal/Journal' element={<Journal />} />
+                        <Route path='/myJournal/Calendar' element={<Calendars />} />
+                        <Route path='/myJournal/Reports' element={<Reports />} />
+                        <Route path='/myJournal/Reports/Notes' element={<ReportNote />} />
+                        <Route path='/myJournal/Reports/Months' element={<ReportMonth />} />
+                        <Route path='/myJournal/Notes' element={<Notes />} />
+                    </Routes>
+                </BrowserRouter>
+                <div className="anc"></div>
+            </div>
+        </div>
     )
 }

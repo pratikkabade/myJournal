@@ -154,7 +154,7 @@ i {
 #customNav {
     background-color: rgba(255, 255, 255, 0.6) !important;
     backdrop-filter: blur(20px) !important;
-    box-shadow: none !important;
+    box-shadow: var(--shadowtiny) !important;
 }
 
 .red {
@@ -299,4 +299,8 @@ a{
 .subSection:hover {
     border-radius: 15px;
     transition: 0.15s;
+}
+.BODY {
+    margin-top: -5px !important;
+    padding-bottom: 50px !important;
 }

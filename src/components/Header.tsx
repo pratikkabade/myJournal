@@ -20,13 +20,13 @@ export const Header = () => {
                         </Link>
                     }
                 </ul>
-                <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-                    <i className='fa-solid fa-caret-down'></i>
-                </button>
+                {user ?
+                    <>
+                        <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+                            <i className='fa-solid fa-caret-down'></i>
+                        </button>
 
-                <div className='collapse navbar-collapse justify-content-end' id='navbarSupportedContent'>
-                    {user ?
-                        <>
+                        <div className='collapse navbar-collapse justify-content-end' id='navbarSupportedContent'>
                             <Link to='/myJournal/Journal'>
                                 <button className='btn-accent green blk'>Journal</button>
                             </Link>
@@ -34,11 +34,11 @@ export const Header = () => {
                                 <button className='btn-accent green blk'>Notes</button>
                             </Link>
                             <SignOut />
-                        </>
-                        :
-                        <></>
-                    }
-                </div>
+                        </div>
+                    </>
+                    :
+                    <></>
+                }
             </div>
         </nav>
     )
